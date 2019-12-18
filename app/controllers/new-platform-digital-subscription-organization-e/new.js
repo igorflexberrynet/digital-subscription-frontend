@@ -1,0 +1,4 @@
+import NewPlatformDigitalSubscriptionOrganizationEController from '../new-platform-digital-subscription-organization-e';
+
+var NewPlatformDigitalSubscriptionOrganizationENewController = NewPlatformDigitalSubscriptionOrganizationEController;
+export default NewPlatformDigitalSubscriptionOrganizationENewController;

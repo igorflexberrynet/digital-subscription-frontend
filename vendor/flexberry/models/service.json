@@ -1,0 +1,119 @@
+﻿{
+  "name": "Service",
+  "modelName": "service",
+  "className": "Service",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "price",
+      "type": "number",
+      "flexberryType": "double",
+      "notNull": true,
+      "defaultValue": "0",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "pricePeriod",
+      "type": "new-platform-digital-subscription-price-period",
+      "flexberryType": "PricePeriod",
+      "notNull": true,
+      "defaultValue": "Month",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "organization",
+      "relatedTo": "organization",
+      "inverse": "service"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ServiceE",
+      "modelName": "service",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Название",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "price",
+          "caption": "Стоимость",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "pricePeriod",
+          "caption": "Период",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ServiceL",
+      "modelName": "service",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Название",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "price",
+          "caption": "Стоимость",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "pricePeriod",
+          "caption": "Период",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Organization",
+          "belongsTo": [],
+          "hidden": true,
+          "attrs": [],
+          "index": 3,
+          "type": "default",
+          "caption": "",
+          "name": "organization",
+          "relatedTo": "organization",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

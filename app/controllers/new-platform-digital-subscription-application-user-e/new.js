@@ -1,0 +1,4 @@
+import NewPlatformDigitalSubscriptionApplicationUserEController from '../new-platform-digital-subscription-application-user-e';
+
+var NewPlatformDigitalSubscriptionApplicationUserENewController = NewPlatformDigitalSubscriptionApplicationUserEController;
+export default NewPlatformDigitalSubscriptionApplicationUserENewController;

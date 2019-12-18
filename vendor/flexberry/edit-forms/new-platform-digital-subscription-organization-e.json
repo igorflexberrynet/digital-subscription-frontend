@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": "employee",
+      "displayAttributeName": "email",
+      "required": true,
+      "relationName": "Employees.Employee",
+      "projection": "ApplicationUserL",
+      "detailModelName": "employee-in-organization"
+    }
+  ],
+  "external": false,
+  "caption": "Organization",
+  "name": "NewPlatformDigitalSubscriptionOrganizationE",
+  "className": "OrganizationE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "organization",
+      "modelProjection": "OrganizationE"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Client",
+      "projection": "ApplicationUserL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Service",
+      "projection": "ServiceL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Subscription",
+  "name": "NewPlatformDigitalSubscriptionSubscriptionE",
+  "className": "SubscriptionE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "subscription",
+      "modelProjection": "SubscriptionE"
+    }
+  ]
+}

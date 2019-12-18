@@ -1,0 +1,140 @@
+﻿{
+  "name": "EmployeeInOrganization",
+  "modelName": "employee-in-organization",
+  "className": "EmployeeInOrganization",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "employmentDate",
+      "type": "date",
+      "flexberryType": "NullableDateTime",
+      "notNull": false,
+      "defaultValue": "Now",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "dismissalDate",
+      "type": "date",
+      "flexberryType": "NullableDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "position",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "isAdmin",
+      "type": "boolean",
+      "flexberryType": "bool",
+      "notNull": true,
+      "defaultValue": "false",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "employee",
+      "relatedTo": "application-user",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "organization",
+      "relatedTo": "organization",
+      "inverse": "employees"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "EmployeeInOrganizationE",
+      "modelName": "employee-in-organization",
+      "attrs": [
+        {
+          "name": "employmentDate",
+          "caption": "Дата приёма на работу",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "dismissalDate",
+          "caption": "Дата увольнения",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "position",
+          "caption": "Должность",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "isAdmin",
+          "caption": "Администратор",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Email",
+          "lookupValueField": "email",
+          "relationName": "Employee",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "email",
+              "caption": "Email",
+              "hidden": true,
+              "index": 5
+            },
+            {
+              "name": "lastName",
+              "caption": "Фамилия",
+              "hidden": false,
+              "index": 6
+            },
+            {
+              "name": "firstName",
+              "caption": "Имя",
+              "hidden": false,
+              "index": 7
+            },
+            {
+              "name": "middleName",
+              "caption": "Отчество",
+              "hidden": false,
+              "index": 8
+            }
+          ],
+          "index": 4,
+          "type": "standard",
+          "caption": "Email пользователя",
+          "name": "employee",
+          "relatedTo": "application-user",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,262 @@
+﻿{
+  "name": "Visit",
+  "modelName": "visit",
+  "className": "Visit",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "date",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": true,
+      "defaultValue": "Now",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "subscription",
+      "relatedTo": "subscription",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "client",
+      "relatedTo": "application-user",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "VisitE",
+      "modelName": "visit",
+      "attrs": [
+        {
+          "name": "date",
+          "caption": "Дата",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Service.Name",
+          "lookupValueField": "service.name",
+          "relationName": "Subscription",
+          "belongsTo": [
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Subscription.Service",
+              "belongsTo": [
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "Subscription.Service.Organization",
+                  "belongsTo": [],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "name",
+                      "caption": "Организация",
+                      "hidden": false,
+                      "index": 5
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "organization",
+                  "relatedTo": "organization",
+                  "inverse": null
+                }
+              ],
+              "hidden": true,
+              "attrs": [
+                {
+                  "name": "name",
+                  "caption": "",
+                  "hidden": true,
+                  "index": 4
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "service",
+              "relatedTo": "service",
+              "inverse": null
+            }
+          ],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "startTime",
+              "caption": "С",
+              "hidden": false,
+              "index": 2
+            },
+            {
+              "name": "endTime",
+              "caption": "По",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Услуга",
+          "name": "subscription",
+          "relatedTo": "subscription",
+          "inverse": null
+        },
+        {
+          "lookupValue": "Email",
+          "lookupValueField": "email",
+          "relationName": "Client",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "email",
+              "caption": "Email",
+              "hidden": true,
+              "index": 7
+            },
+            {
+              "name": "lastName",
+              "caption": "Фамилия",
+              "hidden": false,
+              "index": 8
+            },
+            {
+              "name": "firstName",
+              "caption": "Имя",
+              "hidden": false,
+              "index": 9
+            },
+            {
+              "name": "middleName",
+              "caption": "Отчество",
+              "hidden": false,
+              "index": 10
+            }
+          ],
+          "index": 6,
+          "type": "standard",
+          "caption": "Email",
+          "name": "client",
+          "relatedTo": "application-user",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "VisitL",
+      "modelName": "visit",
+      "attrs": [
+        {
+          "name": "date",
+          "caption": "Дата",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Subscription",
+          "belongsTo": [
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Subscription.Service",
+              "belongsTo": [],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "name",
+                  "caption": "Услуга",
+                  "hidden": false,
+                  "index": 1
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "service",
+              "relatedTo": "service",
+              "inverse": null
+            }
+          ],
+          "hidden": false,
+          "attrs": [],
+          "index": -1,
+          "type": "default",
+          "caption": "Услуга",
+          "name": "subscription",
+          "relatedTo": "subscription",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Client",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "email",
+              "caption": "Email",
+              "hidden": false,
+              "index": 2
+            },
+            {
+              "name": "lastName",
+              "caption": "Фамилия",
+              "hidden": false,
+              "index": 3
+            },
+            {
+              "name": "firstName",
+              "caption": "Имя",
+              "hidden": false,
+              "index": 4
+            },
+            {
+              "name": "middleName",
+              "caption": "Отчество",
+              "hidden": false,
+              "index": 5
+            },
+            {
+              "name": "birthdate",
+              "caption": "Дата рождения",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Email",
+          "name": "client",
+          "relatedTo": "application-user",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,151 @@
+<h3 class="ui header">{{t 'forms.new-platform-digital-subscription-subscription-e.caption'}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=model.errors}}
+    </div>
+  </div>
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button type="submit" class="ui button save-button" {{action 'save'}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button type="submit" class="ui button save-del-button" {{action 'delete'}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button type="submit" class="ui button close-button" {{action 'close'}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field">
+  <label>{{t 'forms.new-platform-digital-subscription-subscription-e.startTime-caption'}}</label>
+  {{
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    readonly=readonly
+    value=model.startTime
+    class=(if model.errors.startTime 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.startTime pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.new-platform-digital-subscription-subscription-e.endTime-caption'}}</label>
+  {{
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    readonly=readonly
+    value=model.endTime
+    class=(if model.errors.endTime 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.endTime pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=readonly
+    required=true
+    value=model.serviceCount
+    class=(if model.errors.serviceCount 'error' '')
+    label=(t 'forms.new-platform-digital-subscription-subscription-e.serviceCount-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.serviceCount pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.new-platform-digital-subscription-subscription-e.client-caption'}}</label>
+  {{
+    flexberry-lookup
+    choose='showLookupDialog'
+    remove='removeLookupValue'
+    value=model.client
+    displayAttributeName='email'
+    autocomplete=true
+    relationName='client'
+    projection='ApplicationUserL'
+    title=(t 'forms.new-platform-digital-subscription-subscription-e.client-caption')
+    readonly=readonly
+    componentName="clientLookup"
+  }}
+  {{flexberry-validationmessage error=model.errors.client pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.client.lastName
+    class=(if model.errors.client.lastName 'error' '')
+    label=(t 'forms.new-platform-digital-subscription-subscription-e.client.lastName-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.client.lastName pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.client.firstName
+    class=(if model.errors.client.firstName 'error' '')
+    label=(t 'forms.new-platform-digital-subscription-subscription-e.client.firstName-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.client.firstName pointing="pointing"}}
+</div>
+
+<div class="field">
+  {{
+    flexberry-field
+    placeholder=(t 'components.flexberry-field.placeholder')
+    readonly=true
+    required=true
+    value=model.client.middleName
+    class=(if model.errors.client.middleName 'error' '')
+    label=(t 'forms.new-platform-digital-subscription-subscription-e.client.middleName-caption')
+  }}
+  {{flexberry-validationmessage error=model.errors.client.middleName pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.new-platform-digital-subscription-subscription-e.client.birthdate-caption'}}</label>
+  {{
+    flexberry-datepicker
+    placeholder=(t 'components.flexberry-datepicker.placeholder')
+    readonly=true
+    value=model.client.birthdate
+    class=(if model.errors.client.birthdate 'error' '')
+  }}
+  {{flexberry-validationmessage error=model.errors.client.birthdate pointing="pointing"}}
+</div>
+
+<div class="field">
+  <label>{{t 'forms.new-platform-digital-subscription-subscription-e.service-caption'}}</label>
+  {{
+    flexberry-lookup
+    choose='showLookupDialog'
+    remove='removeLookupValue'
+    value=model.service
+    displayAttributeName='name'
+    autocomplete=true
+    relationName='service'
+    projection='ServiceL'
+    title=(t 'forms.new-platform-digital-subscription-subscription-e.service-caption')
+    readonly=readonly
+    componentName="serviceLookup"
+  }}
+  {{flexberry-validationmessage error=model.errors.service pointing="pointing"}}
+</div>
+
+</form>

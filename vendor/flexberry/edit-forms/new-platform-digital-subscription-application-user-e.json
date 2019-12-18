@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Application user",
+  "name": "NewPlatformDigitalSubscriptionApplicationUserE",
+  "className": "ApplicationUserE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "application-user",
+      "modelProjection": "ApplicationUserE"
+    }
+  ]
+}

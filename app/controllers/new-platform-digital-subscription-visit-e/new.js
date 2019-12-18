@@ -1,0 +1,4 @@
+import NewPlatformDigitalSubscriptionVisitEController from '../new-platform-digital-subscription-visit-e';
+
+var NewPlatformDigitalSubscriptionVisitENewController = NewPlatformDigitalSubscriptionVisitEController;
+export default NewPlatformDigitalSubscriptionVisitENewController;

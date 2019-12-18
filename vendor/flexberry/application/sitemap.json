@@ -1,0 +1,43 @@
+﻿{
+  "applicationCaption": "Электронный абонемент",
+  "applicationTitle": "Электронный абонемент",
+  "items": [
+    {
+      "link": null,
+      "menuName": "рабочий-стол",
+      "caption": "Рабочий стол",
+      "title": "Рабочий стол",
+      "children": [
+        {
+          "link": "new-platform-digital-subscription-subscription-l",
+          "menuName": null,
+          "caption": "Абонементы",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "new-platform-digital-subscription-visit-l",
+          "menuName": null,
+          "caption": "Посещения",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "new-platform-digital-subscription-application-user-l",
+          "menuName": null,
+          "caption": "Пользователи",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "new-platform-digital-subscription-organization-l",
+          "menuName": null,
+          "caption": "Организации",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}
