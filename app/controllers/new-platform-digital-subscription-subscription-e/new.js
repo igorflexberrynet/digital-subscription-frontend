@@ -1,4 +1,0 @@
-import NewPlatformDigitalSubscriptionSubscriptionEController from '../new-platform-digital-subscription-subscription-e';
-
-var NewPlatformDigitalSubscriptionSubscriptionENewController = NewPlatformDigitalSubscriptionSubscriptionEController;
-export default NewPlatformDigitalSubscriptionSubscriptionENewController;
